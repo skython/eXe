@@ -182,18 +182,23 @@ class Application:
         """
         Loads the config file and applies all the settings
         """
-        if self.standalone:
-            from exe.engine.standaloneconfig import StandaloneConfig
-            self.config = StandaloneConfig()
-        elif sys.platform[:3] == "win":
-            from exe.engine.winconfig import WinConfig
-            self.config = WinConfig()
+        if sys.platform[:3] == "win":
+            if self.standalone:
+                from exe.engine.standaloneconfig import StandaloneConfig
+                self.config = StandaloneConfig()
+            else:
+               from exe.engine.winconfig import WinConfig
+               self.config = WinConfig()
         elif sys.platform[:6] == "darwin":
             from exe.engine.macconfig import MacConfig
             self.config = MacConfig()
         else:
-            from exe.engine.linuxconfig import LinuxConfig
-            self.config = LinuxConfig()
+            if self.standalone:
+                from exe.engine.standalonelinuxconfig import StandaloneLinuxConfig
+                self.config = StandaloneLinuxConfig()
+            else:
+                from exe.engine.linuxconfig import LinuxConfig
+                self.config = LinuxConfig()
         log.debug("logging set up")
 
 
