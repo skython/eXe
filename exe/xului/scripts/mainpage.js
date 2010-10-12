@@ -615,6 +615,10 @@ function exportPackage(exportType, exportDir, printCallback) {
             // NOTE: currently only the printing mechanism will provide an exportDir, hence the printCallback function.
             nevow_clientToServerEvent('exportPackage', this, '', exportType, exportDir, printCallback)
         }
+    } else if(exportType == "eStudy") {
+        var features  = "width=227,height=227,status=no,resizeable=yes,"+
+                        "scrollbars=yes";
+        var editorWin = window.open("/estudy", PREFERENCES, features);
     } else if(exportType == "textFile"){
         title = EXPORT_TEXT_PACKAGE_AS;
         fp.init(window, title, nsIFilePicker.modeSave);

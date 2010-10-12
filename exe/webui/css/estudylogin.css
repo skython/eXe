@@ -1,0 +1,21 @@
+html, body {
+    padding: 0px;
+    margin: 0px;
+}
+
+#main {
+    padding: 5px;
+    text-align: center;
+}
+
+#estudylogo {
+    padding: 0px;
+    margin: 0px;
+    width: 227px;
+    height: 70px;
+    background-image: url(/images/estudy.png);
+}
+
+#username, #password {
+    width: 150px;
+}
