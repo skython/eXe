@@ -96,6 +96,17 @@ def textInput(name, value=u"", size=40, disabled=u"", **kwargs):
     html += disabled+u" />\n"
     return html
 
+def password(name, value=u"", size=40, disabled=u"", **kwargs):
+    """Adds a text input to a form"""
+    html  = u"<input type=\"password\" "
+    html += u"name=\"%s\" " % name
+    html += u"id=\"%s\" " % name
+    html += u"value=\"%s\" " % value
+    html += u"size=\"%s\" " % size
+    for key, val in kwargs.items():
+        html += u' %s="%s"' % (key.replace('_', ''), val.replace('"', '\\"'))
+    html += disabled+u" />\n"
+    return html
 
 def textArea(name, value="", disabled="", cols="80", rows="8"):
     """Adds a text area to a form"""
@@ -369,6 +380,8 @@ def formField(type_, package, caption, action, object_='', instruction='', \
         html += textArea(action+object_, *args, **kwargs)
     elif type_ == 'textInput':
         html += textInput(action+object_, *args, **kwargs)
+    elif type_ == 'password':
+        html += password(action+object_, *args, **kwargs)
     elif type_ == 'checkbox':
         html += checkbox(*args, **kwargs)
     html += '</div>'
