@@ -50,6 +50,7 @@ from exe.engine.package          import Package
 from exe                         import globals as G
 from tempfile                    import mkdtemp
 from exe.engine.mimetex          import compile
+from exe.webui.estudyhandler     import EStudyHandler
 
 
 log = logging.getLogger(__name__)
@@ -83,6 +84,9 @@ class MainPage(RenderableLivePage):
         # And in the main section
         self.authoringPage  = AuthoringPage(self)
         self.propertiesPage = PropertiesPage(self)
+        
+        # init the eStudy handler
+        self.eStudyHandler = EStudyHandler()
 
         # translate the "don't close the window" message
         red_x = _("Please use eXe's\n   File... Quit\nmenu to close eXe.")
@@ -130,6 +134,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleTestPrintMsg,    'testPrintMessage')
         setUpHandler(self.handleSetLocale,       'setLocale')
         setUpHandler(self.handleSetInternalAnchors,  'setInternalAnchors')
+        setUpHandler(self.eStudyHandler.handleLogin,  'eStudyLogin')
 
         self.idevicePane.client = client
         # Render the js 
