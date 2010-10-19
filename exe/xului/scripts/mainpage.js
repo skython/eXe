@@ -53,7 +53,10 @@ SAVE_EXTRACTED_PACKAGE_AS = "Save extracted package as";
 var haveLoaded = false
 
 // Set to false to stop selects doing page reloads
-var clickon = true 
+var clickon = true
+
+// This var is need have access to the eStudy window from within every js function
+var eStudyWin
 
 // Takes a server tree node id eg. '1' and returns a xul treeitem elemtent
 // reference
@@ -618,7 +621,7 @@ function exportPackage(exportType, exportDir, printCallback) {
     } else if(exportType == "eStudy") {
         var features  = "width=227,height=227,status=no,resizeable=yes,"+
                         "scrollbars=yes";
-        var editorWin = window.open("/estudy", PREFERENCES, features);
+        eStudyWin = window.open("/estudylogin", PREFERENCES, features);
     } else if(exportType == "textFile"){
         title = EXPORT_TEXT_PACKAGE_AS;
         fp.init(window, title, nsIFilePicker.modeSave);

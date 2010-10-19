@@ -19,3 +19,7 @@ html, body {
 #username, #password {
     width: 150px;
 }
+
+#errormsg {
+    padding: 5px;
+}

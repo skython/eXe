@@ -1,8 +1,6 @@
 # ===========================================================================
 # eXe
-# Copyright 2004-2006, University of Auckland
-# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
-# Copyright 2010 Ivo Benner, Univerity of Applied Sciences Giessen
+# Copyright 2010 Ivo Benner, University of Applied Sciences in Giessen, Germany
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -31,7 +29,7 @@ from exe.webui.renderable      import RenderableResource
 log = logging.getLogger(__name__)
 
 
-class EStudyPage(RenderableResource):
+class EStudyLoginPage(RenderableResource):
     """
     The EStudyPage is responsible for exporting/uploading content to the eStudy platform
     """
@@ -70,6 +68,12 @@ class EStudyPage(RenderableResource):
         html += u"@import url(/style/standardwhite/content.css);\n"
         html += u"@import url(/css/estudylogin.css);\n"
         html += u"</style>\n"
+        html += u'''<script language="javascript" type="text/javascript">
+                        function login(username,password) {
+                            opener.nevow_clientToServerEvent('eStudyLogin', this, '', username,password)
+                            // window.close()
+                        }
+                    </script>'''
         html += u"<title> eStudy - Login</title>\n"
         html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
         html += u" charset=UTF-8\"></meta>\n";
@@ -84,10 +88,12 @@ class EStudyPage(RenderableResource):
                                  'username')
         html += common.formField('password', this_package, _(u"Password"),
                                  'password')
+        html += u"<div id=\"errormsg\"></div>"
         html += u"<div id=\"editorButtons\"> \n"     
-        html += u"<br/>" 
         html += common.button("ok", _("OK"), enabled=True,
-                _class="button",)
+                _class="button",
+                onClick="login(document.forms.contentForm.username.value,"
+                    "document.forms.contentForm.password.value)")
         html += common.button("cancel", _("Cancel"), enabled=True,
                 _class="button", onClick="window.close()")
         html += u"</div>\n"

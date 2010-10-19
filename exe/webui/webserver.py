@@ -46,7 +46,7 @@ from exe.webui.packageredirectpage import PackageRedirectPage
 from exe.webui.editorpage          import EditorPage
 from exe.webui.preferencespage     import PreferencesPage
 from exe.webui.aboutpage           import AboutPage
-from exe.webui.estudypage          import EStudyPage
+from exe.webui.estudyloginpage     import EStudyLoginPage
 
 import logging
 log = logging.getLogger(__name__)
@@ -67,7 +67,7 @@ class WebServer:
         self.editor      = EditorPage(self.root)
         self.preferences = PreferencesPage(self.root)
         self.about       = AboutPage(self.root)
-        self.estudy      = EStudyPage(self.root)
+        self.estudy      = EStudyLoginPage(self.root)
 
 
     def find_port(self):
@@ -203,7 +203,7 @@ class WebServer:
         self.root.putChild("editor",      self.editor)
         self.root.putChild("preferences", self.preferences)
         self.root.putChild("about",       self.about)
-        self.root.putChild("estudy",      self.estudy)
+        self.root.putChild("estudylogin",      self.estudy)
 
         # A port for this server was looked for earlier by find_port.  
         # Ensure that it is valid (>= 0):
