@@ -58,7 +58,7 @@
                     <menuseparator/>
                 <menu n:render="translate" id="export-menu" label="Export" accesskey="e">
                   <menupopup id="export-popup">
-		    <menuitem label="eStudy" accesskey="e" oncommand="exportPackage('eStudy','','')"/>
+                    <menuitem label="eStudy" accesskey="e" oncommand="exportPackage('eStudy','','')"/>
                     <menuitem label="SCORM 1.2" accesskey="s" oncommand="exportPackage('scorm','','')"/>
                     <menuitem n:render="translate" label="Single Page" accesskey="p" oncommand="exportPackage('singlePage','','')"/>
                     <menuitem n:render="translate" label="Self-contained Folder" oncommand="exportPackage('webSite','','')"/>
