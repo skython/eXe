@@ -82,7 +82,7 @@ color: #ffffff;
 border-bottom: 1px solid #fff;
 border-top: 6px solid #706f61;
 background-image:url(active_bg.gif);
-background-position: -2px 2px;
+background-position: -2px -2px;
 background-repeat:no-repeat;
 }
 
@@ -101,6 +101,7 @@ background-color: #C7C5B9;
 
 #subnav #active { /* subnav selected */
 display: block;
+vertical-align: center;
 margin-left: 10px;
 width: 187px !important; /* the Housley Hack for Firefox... */
 width: 201px; /* for IE */
@@ -109,7 +110,7 @@ color: #ffffff;
 font-size:11px;
 background-color: #706F61;
 background-image:url(active_bg.gif);
-background-position:-2px 2px;
+background-position:-2px 0px;
 background-repeat:no-repeat;
 border-top: 2px solid #706f61;
 }	
