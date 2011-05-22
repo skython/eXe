@@ -61,7 +61,7 @@
                     <!--<menuitem label="eStudy" accesskey="e" oncommand="exportPackage('eStudy','','')"/>-->
                     <menuitem label="SCORM 1.2" accesskey="s" oncommand="exportPackage('scorm','','')"/>
                     <menuitem n:render="translate" label="Single Page" accesskey="p" oncommand="exportPackage('singlePage','','')"/>
-                    <menuitem n:render="translate" label="Self-contained Folder" oncommand="exportPackage('webSite','','')"/>
+                    <menuitem label="Website" oncommand="exportPackage('webSite','','')"/>
                     <menuitem n:render="translate" label="Zip File" oncommand="exportPackage('zipFile','','')"/>
                     <!--<menuitem label="SCORM 2004" accesskey="c" oncommand="exportPackage('scorm2004','','')"/>-->
                     <!--
