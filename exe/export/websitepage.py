@@ -105,6 +105,8 @@ class WebsitePage(Page):
         html += '<p id=\"nodeTitle\">'
         html += escape(self.node.titleLong)
         html += '</p></div>\n'
+        
+        html += self.getNavigationLink(prevPage, nextPage)
 
         for idevice in self.node.idevices:
             html += u'<div class="%s" id="id%s">\n' %  (idevice.klass,
