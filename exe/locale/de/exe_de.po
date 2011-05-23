@@ -3216,7 +3216,7 @@ msgstr "Amharisch"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="toolsPreferences()" label="Preferences">
 msgid "Preferences"
-msgstr "Präferenzen"
+msgstr "Einstellungen"
 
 #: exe/xului/templates/packageproperties.xul:<button flex="0"
 #: oncommand="submitForm(this.parentNode.parentNode,
@@ -3328,7 +3328,7 @@ msgstr "Bashkirisch"
 #: oncommand="browseURL('http://exelearning.org/')" accesskey="w" label="eXe
 #: Web Site">
 msgid "label=\"eXe Web Site\" accesskey=\"w\""
-msgstr "label=\"eXe Live Chat\" accesskey=\"w\""
+msgstr "label=\"eXe Webseite\" accesskey=\"w\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
 #: label="Basque ">
@@ -3342,7 +3342,7 @@ msgstr "Baskisch"
 #: oncommand="browseURL('http://exelearning.org/issue.php')" accesskey="r"
 #: label="Report an Issue">
 msgid "label=\"Report an Issue\" accesskey=\"r\""
-msgstr "label=\"Bericht erstellen\" accesskey=\"r\""
+msgstr "label=\"Problem melden\" accesskey=\"r\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
 #: label="Bengali; Bangla ">
